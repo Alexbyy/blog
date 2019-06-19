@@ -24,7 +24,7 @@ module.exports = {
       ref  : 'origin/master',
       repo : 'git@github.com:Alexbyy/blog.git',
       path : '/home/alex/www/koa2',
-      'post-deploy' : 'npm install && cross-env NODE_ENV=production pm2 start bin/www',
+      'post-deploy' : 'npm install && npm run prd',
       "env"  : {
         "NODE_ENV": "production"
       }
