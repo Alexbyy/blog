@@ -2,12 +2,18 @@ module.exports = {
   apps : [{
     name: 'blog-backend',
     script: './bin/www',
-
+    watch: true,
+        "ignore_watch":[
+            "node_modules",
+            "logs"
+        ],
+    instances: 2,
+    error_file: "logs/err.log",
+    out_file: "logs/out.log",
+    log_date_format: "YYYY-MM-DD HH:mm:ss",
     // Options reference: https://pm2.io/doc/en/runtime/reference/ecosystem-file/
     args: 'one two',
-    instances: 1,
     autorestart: true,
-    watch: false,
     max_memory_restart: '1G',
     env: {
       NODE_ENV: 'development'
