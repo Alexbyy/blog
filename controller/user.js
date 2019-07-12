@@ -23,6 +23,10 @@ const newAccount = async (username, password, realname, state) => {
     state    = escape(state)
     password = genPassword(password)
     password = escape(password)
+    console.log("username", username)
+    console.log("password", password)
+    console.log("state", state)
+    console.log("realname", realname)
     const sql = `
         insert into users (username, password, realname, state) values (${username}, ${password}, ${realname}, ${state})
     `

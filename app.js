@@ -4,6 +4,7 @@ const views = require('koa-views')
 const json = require('koa-json')
 const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
+const static = require('koa-static')   //静态资源服务插件
 const logger = require('koa-logger')
 const session = require('koa-generic-session')
 const redisStore = require('koa-redis')
@@ -20,7 +21,11 @@ const { REDIS_CONF } = require('./conf/db')
 
 // error handler
 onerror(app)
-
+// 配置静态资源
+const staticPath = './static/dist'
+app.use(static(
+    path.join( __dirname, staticPath)
+))
 // middlewares
 app.use(bodyparser({
   enableTypes:['json', 'form', 'text'],

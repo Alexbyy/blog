@@ -478,3 +478,10 @@ Error: ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using 
     at Module._compile (internal/modules/cjs/loader.js:701:30)
     at Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)
     at Module.load (internal/modules/cjs/loader.js:600:32)
+You have triggered an unhandledRejection, you may have forgotten to catch a Promise rejection:
+Error: session store is unavailable
+    at Timeout.setTimeout [as _onTimeout] (/Users/baiyy/blog-koa2/node_modules/koa-generic-session/lib/session.js:441:16)
+    at ontimeout (timers.js:436:11)
+    at tryOnTimeout (timers.js:300:5)
+    at listOnTimeout (timers.js:263:5)
+    at Timer.processTimers (timers.js:223:10)
